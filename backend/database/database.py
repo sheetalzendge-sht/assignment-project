@@ -37,6 +37,17 @@ def create_tickets_table():
 def create_notes_table():
     connection = get_connection()
     cursor = connection.cursor()
+    
+def get_all_tickets():
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("SELECT * FROM tickets ORDER BY id DESC")
+    tickets = cursor.fetchall()
+
+    connection.close()
+
+    return tickets
 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS notes (
@@ -56,3 +67,12 @@ if __name__ == "__main__":
     create_notes_table()
 
     print("Database tables created successfully!")
+
+    print("\nAll Tickets:")
+    tickets = get_all_tickets()
+
+    if tickets:
+        for ticket in tickets:
+            print(dict(ticket))
+    else:
+        print("No tickets found.")

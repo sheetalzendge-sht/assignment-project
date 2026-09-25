@@ -22,11 +22,13 @@ create_notes_table()
 
 
 # CORS configuration
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "https://assignment-project-2-qaeq.onrender.com"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

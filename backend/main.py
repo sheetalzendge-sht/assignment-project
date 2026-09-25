@@ -26,8 +26,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://sunny-passion-production-c7ec.up.railway.app"
-    ],
+        "https://assignment-project-2-qaeq.onrender.com"
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
